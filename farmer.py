@@ -1,8 +1,9 @@
 from fuzzywuzzy import fuzz
 import pandas as pd
 
-class farmer:
 
+#class farmer
+class farmer:
    def __init__(self,name,father,village):
      self.name=name
      self.father=father
@@ -11,7 +12,6 @@ class farmer:
      self.m_father=""
 
    def display(self):
-
     a=[self.name,self.father,self.village]
     return(a)
 
@@ -47,6 +47,7 @@ for i in list1:
   inp=i.display()
   Inpl.append(inp)
 inp_df=pd.DataFrame(Inpl)
+inp_df.columns=["Name","Father Name","Village"]
 print(inp_df)
 
 print("output file:")
@@ -54,6 +55,7 @@ for i in list1:
  out=i.display2()
  Outl.append(out)
 out_df=pd.DataFrame(Outl)
+out_df.columns=["Name","Father Name","Village","Matched name","Matched Father Name"]
 print(out_df)
 
 
