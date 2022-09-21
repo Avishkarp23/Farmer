@@ -33,11 +33,14 @@ for i in b:
 
 #check duplicates
 for i in range(len(list1)-1):
-
-   if(fuzz.WRatio(list1[i].name,list1[i+1].name)>84):
-      list1[i+1].m_name=list1[i].name
-   if (fuzz.WRatio(list1[i].father, list1[i + 1].father) > 84):
-    list1[i + 1].m_father = list1[i].father
+   if(list1[i].m_name=="" and list1[i].m_father==""):
+       for j in range(i+1,len(list1)):
+           if(fuzz.WRatio(list1[i].name,list1[j].name)>84 ) :
+              list1[j].name=list1[i].name
+              list1[j].m_name=list1[i].name
+           if (fuzz.WRatio(list1[i].father, list1[j].father) > 84):
+            list1[j].m_father=list1[i].name
+            list1[j].m_father = list1[i].father
 
 #print results
 Inpl=[]
